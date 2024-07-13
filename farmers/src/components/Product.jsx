@@ -7,13 +7,13 @@ const ProductList = () => {
   useEffect(() => {
     // Fetch products from backend API
     fetch('/api/products')
-      .then(response => response.json())
+      .then(response  => response.json())
       .then(data => setProducts(data));
   }, []);
 
   return (
     <div className="product-list">
-      {products.map(product => (
+      {products.map( product => (
         <div key={product.id} className="product-item">
           <img src={product.image} alt={product.name} />
           <h2>{product.name}</h2>
