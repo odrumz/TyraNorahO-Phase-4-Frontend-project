@@ -1,4 +1,3 @@
-import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
 import Navbar from './components/Navbar';
@@ -10,6 +9,8 @@ import Filter from './components/Filter';
 import About from './components/About';
 import Review from './components/Review';
 import ShoppingCart from './components/ShoppingCart';
+import LoginForm from './components/LoginForm'; 
+import RegistrationForm from './components/RegistrationForm'; 
 import './App.css';
 
 function App() {
@@ -27,6 +28,8 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/reviews" element={<Review />} />
           <Route path="/cart" element={<ShoppingCart />} />
+          <Route path="/login" element={<LoginForm />} /> {/* Corrected element */}
+          <Route path="/register" element={<RegistrationForm />} /> {/* Corrected element */}
         </Routes>
       </div>
     </Router>
