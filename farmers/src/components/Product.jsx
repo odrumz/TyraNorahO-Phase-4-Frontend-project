@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
 
+
+
 const ProductList = () => {
   const [products, setProducts] = useState([]);
 
@@ -20,6 +22,7 @@ const ProductList = () => {
           <p>{product.description}</p>
           <p>${product.price}</p>
           <button>Add to Cart</button>
+          
         </div>
       ))}
     </div>

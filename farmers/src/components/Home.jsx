@@ -1,7 +1,7 @@
 import React from 'react';
 import Search from './Search';
 import Filter from './Filter';
-import Footer from './Footer';
+
 const Home = () => {
   return (
     <div className="home">
@@ -17,7 +17,6 @@ const Home = () => {
           <div className="search-filter">
             <Search />
             <Filter />
-            <Footer/>
           </div>
         </div>
       </section>
