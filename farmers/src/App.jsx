@@ -15,6 +15,7 @@ import RegistrationForm from './components/RegistrationForm';
 import { register, login, isLoggedIn } from './authService';
 
 import './App.css';
+import ProductList from './components/Product';
 
 function App() {
   return (
@@ -31,6 +32,9 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/reviews" element={<Review />} />
           <Route path="/cart" element={<ShoppingCart />} />
+
+          <Route path="/products" element={<ProductList/>} />
+
           {/* Render LoginForm only if authService functions are available */}
           {isLoggedIn && <Route path="/login" element={<LoginForm login={login} />} />}
           {/* Render RegistrationForm only if authService functions are available */}
