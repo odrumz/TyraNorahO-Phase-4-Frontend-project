@@ -7,7 +7,7 @@ const Home = () => {
     <div className="home">
       <section className="hero">
         <div className="hero-content">
-          <h1>Welcome to The Farmers Market</h1>
+          <h1>Welcome  to The Best Farmers Market</h1>
           <p>Discover fresh, local products from your community</p>
         </div>
       </section>
