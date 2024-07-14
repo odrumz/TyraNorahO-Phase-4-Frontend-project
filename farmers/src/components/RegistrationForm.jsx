@@ -2,7 +2,7 @@ import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { useNavigate } from 'react-router-dom';
-import * as authService from './authService'; // Assuming authService.js is in the same directory
+import * as authService from '../authService'; // Assuming authService.js is in the same directory
 
 const RegisterForm = () => {
   const navigate = useNavigate();
