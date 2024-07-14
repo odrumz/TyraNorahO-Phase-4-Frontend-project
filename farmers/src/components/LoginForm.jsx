@@ -2,7 +2,7 @@ import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { useNavigate } from 'react-router-dom';
-import { login } from './authService'; 
+import { login } from '../authService'; 
 
 const LoginForm = () => {
   const navigate = useNavigate();
