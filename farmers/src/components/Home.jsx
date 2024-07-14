@@ -21,6 +21,7 @@ const Home = () => {
             <Search />
             <Filter />
             <Product/>
+  
           </div>
         </div>
       </section>
