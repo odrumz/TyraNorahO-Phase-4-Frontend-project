@@ -10,6 +10,10 @@ import Filter from './components/Filter';
 import About from './components/About';
 import Review from './components/Review';
 import ShoppingCart from './components/ShoppingCart';
+import LoginForm from './components/LoginForm';
+import RegistrationForm from './components/RegistrationForm';
+import { register, login, isLoggedIn } from './authService';
+
 import './App.css';
 import ProductList from './components/Product';
 
@@ -28,7 +32,13 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/reviews" element={<Review />} />
           <Route path="/cart" element={<ShoppingCart />} />
+
           <Route path="/products" element={<ProductList/>} />
+
+          {/* Render LoginForm only if authService functions are available */}
+          {isLoggedIn && <Route path="/login" element={<LoginForm login={login} />} />}
+          {/* Render RegistrationForm only if authService functions are available */}
+          {register && <Route path="/registration" element={<RegistrationForm register={register} />} />}
         </Routes>
       </div>
     </Router>
