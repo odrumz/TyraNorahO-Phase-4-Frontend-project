@@ -1,7 +1,5 @@
 import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
-import * as Yup from 'yup';
-import axios from 'axios';
 
 const LoginForm = () => {
   const initialValues = {
@@ -9,21 +7,25 @@ const LoginForm = () => {
     password: ''
   };
 
-  const validationSchema = Yup.object().shape({
-    email: Yup.string().required('Email is required'),
-    password: Yup.string().required('Password is required')
-  });
-
-  const handleSubmit = async (values, { setSubmitting, resetForm }) => {
-    try {
-      const response = await axios.post('/api/login', values); // Adjust API endpoint as per your backend setup
-      console.log(response.data); // Handle success message or redirect user
-      resetForm();
-    } catch (error) {
-      console.error('Login error:', error);
-    } finally {
-      setSubmitting(false);
+  const validate = values => {
+    const errors = {};
+    if (!values.email) {
+      errors.email = 'Email is required';
+    } else if (!/\S+@\S+\.\S+/.test(values.email)) {
+      errors.email = 'Invalid email format';
     }
+
+    if (!values.password) {
+      errors.password = 'Password is required';
+    }
+    return errors;
+  };
+
+  const handleSubmit = (values, { setSubmitting, resetForm }) => {
+    // Handle form submission without axios
+    console.log('Form submitted with values:', values);
+    resetForm();
+    setSubmitting(false);
   };
 
   return (
@@ -31,15 +33,15 @@ const LoginForm = () => {
       <h2>Login</h2>
       <Formik
         initialValues={initialValues}
-        validationSchema={validationSchema}
+        validate={validate}
         onSubmit={handleSubmit}
       >
         {({ isSubmitting }) => (
           <Form>
             <div>
-              <label htmlFor="username">Username</label>
-              <Field type="text" id="username" name="username" />
-              <ErrorMessage name="username" component="div" />
+              <label htmlFor="email">Email</label>
+              <Field type="email" id="email" name="email" />
+              <ErrorMessage name="email" component="div" />
             </div>
             <div>
               <label htmlFor="password">Password</label>

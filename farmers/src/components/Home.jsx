@@ -1,7 +1,11 @@
 import React from 'react';
 import Search from './Search';
 import Filter from './Filter';
+import Product from './Product'
+
 const Home = () => {
+  
+
   return (
     <div className="home">
       <section className="hero">
@@ -16,6 +20,7 @@ const Home = () => {
           <div className="search-filter">
             <Search />
             <Filter />
+            <Product/>
           </div>
         </div>
       </section>
@@ -24,3 +29,6 @@ const Home = () => {
 };
 
 export default Home;
+
+
+
