@@ -10,8 +10,6 @@ import Filter from './components/Filter';
 import About from './components/About';
 import Review from './components/Review';
 import ShoppingCart from './components/ShoppingCart';
-
-
 import './App.css';
 import ProductList from './components/Product';
 
