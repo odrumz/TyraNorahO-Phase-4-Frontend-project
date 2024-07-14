@@ -10,7 +10,10 @@ import Filter from './components/Filter';
 import About from './components/About';
 import Review from './components/Review';
 import ShoppingCart from './components/ShoppingCart';
+
+
 import './App.css';
+import ProductList from './components/Product';
 
 function App() {
   return (
@@ -27,6 +30,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/reviews" element={<Review />} />
           <Route path="/cart" element={<ShoppingCart />} />
+          <Route path="/products" element={<ProductList/>} />
         </Routes>
       </div>
     </Router>

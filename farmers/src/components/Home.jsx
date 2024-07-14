@@ -1,11 +1,5 @@
 import React from 'react';
-import Search from './Search';
-import Filter from './Filter';
-import Product from './Product'
-
 const Home = () => {
-  
-
   return (
     <div className="home">
       <section className="hero">
@@ -17,12 +11,7 @@ const Home = () => {
       <section className="product-section">
         <div className="product-section-content">
           <h2>Explore Our Products</h2>
-          <div className="search-filter">
-            <Search />
-            <Filter />
-            <Product/>
-  
-          </div>
+          
         </div>
       </section>
     </div>
