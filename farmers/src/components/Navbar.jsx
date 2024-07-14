@@ -13,6 +13,7 @@ const Navbar = () => {
   };
 
   return (
+
     <nav className='navbar'>
       <ul className='navbar-container'>
         <li>
@@ -47,6 +48,18 @@ const Navbar = () => {
             <button className='navbar-link' onClick={handleLogout}>Logout</button>
           </li>
         )}
+
+    <nav>
+      <ul>
+        <li><Link to="/">Home</Link></li>
+        <li><Link to="/products">Products</Link></li>
+        <li><Link to="/favourites">Favourites</Link></li>
+        <li><Link to="/cart">Cart</Link></li>
+        <li><Link to="/checkout">Checkout</Link></li>
+        <li><Link to="/review">Review</Link></li>
+        <li><Link to="/registration">Registration</Link></li>
+        <li><Link to="/login">Login </Link></li>
+
       </ul>
     </nav>
   );

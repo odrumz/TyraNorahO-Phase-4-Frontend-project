@@ -1,10 +1,15 @@
+
 // LoginForm.jsx
 
 import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { useNavigate } from 'react-router-dom';
+
 import authService from './authService';
+=======
+import { login } from '../authService'; 
+
 
 const LoginForm = () => {
   const navigate = useNavigate();
@@ -16,6 +21,7 @@ const LoginForm = () => {
 
   const handleSubmit = async (values, { setFieldError }) => {
     try {
+
       const result = await authService.login(values.email, values.password);
       localStorage.setItem('access_token', result.token);
       localStorage.setItem('refresh_token', result.refresh_token);
@@ -23,6 +29,17 @@ const LoginForm = () => {
     } catch (error) {
       setFieldError('email', 'Invalid email or password');
       setFieldError('password', 'Invalid email or password');
+
+      const result = await login(values.email, values.password); // Using named import
+      if (result) {
+        navigate('/profile');
+      } else {
+        setFieldError('email', 'Invalid email or password');
+        setFieldError('password', 'Invalid email or password');
+      }
+    } catch (error) {
+      console.error('Login error:', error);
+
     }
   };
 
